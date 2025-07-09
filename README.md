@@ -12,7 +12,7 @@ A simple Python script to scan a directory and its subdirectories for video file
 
 ## Overview
 
-This tool provides a straightforward way to quickly get an inventory of video files within a folder structure. It identifies common video formats, extracts the duration of each file, and prints a report to the console. At the end of the analysis, it displays a summary dialog box categorizing files as being longer or shorter than 90 seconds.
+This tool provides a straightforward way to quickly get an inventory of video files within a folder structure. It identifies common video formats, extracts the duration of each file, and prints a report to the console. At the end of the analysis, it displays a summary dialog box and saves all the output to a log file.
 
 ## Features
 
@@ -22,6 +22,7 @@ This tool provides a straightforward way to quickly get an inventory of video fi
 -   Handles potential errors with corrupted or unreadable files gracefully.
 -   Provides a final summary of how many videos are longer than 1 minute and 30 seconds and how many are shorter.
 -   Uses a graphical user interface (GUI) to select the target folder.
+-   **Creates a detailed log file (`video_analysis_log.txt`)** in the script's directory with all the processed information and the final summary.
 
 ## Requirements
 
@@ -55,4 +56,7 @@ This tool provides a straightforward way to quickly get an inventory of video fi
 
 4.  **Check the summary.**
     Once the analysis is complete, a message box will pop up with a summary of the results.
+
+5.  **Find the log file.**
+    A file named `video_analysis_log.txt` will be created in the same directory where the script is located, containing all the output from the analysis.
 
