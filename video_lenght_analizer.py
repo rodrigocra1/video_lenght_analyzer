@@ -38,6 +38,16 @@ def analyze_videos_in_directory(directory):
     print(f"Iniciando a varredura no diretório: {directory}\n")
     print("-" * 70)
 
+    divisionbar = "-" * 70
+    dateversion = (f"\nCurrent timestamp: {timestamp}\n\n")
+    videolog = open('video_lenght_analizer_LOG.txt', 'a')
+    videolog.write("\n")
+    videolog.write("|" * 80)
+    videolog.writelines(dateversion)
+    videolog.write(f'Iniciando varredura no diretório:\n{directory}\n\n')
+    videolog.writelines(divisionbar)
+
+
     # Percorre o diretório e seus subdiretórios
     for root, _, files in os.walk(directory):
         for filename in files:
@@ -54,6 +64,10 @@ def analyze_videos_in_directory(directory):
                     formatted_duration = format_duration(duration)
                     print(f"Arquivo: {file_path}")
                     print(f"Duração: {formatted_duration}\n")
+
+
+                    videolog.write(f"\nArquivo: {filename}")
+                    videolog.write(f" - Duração: {formatted_duration}\n")
 
                     # Atualiza os contadores
                     if duration > 90:
@@ -77,18 +91,15 @@ def analyze_videos_in_directory(directory):
 
     # Exibe o resumo final em uma caixa de mensagem
     summary_message = (
-        f"Análise Concluída!\n\n"
+        f"\nAnálise Concluída!\n\n"
         f"Total de arquivos de vídeo encontrados: {total_files_found}\n"
         f"Arquivos com mais de 1m30s: {longer_than_90s}\n"
         f"Arquivos com 1m30s ou menos: {shorter_or_equal_to_90s}\n"
     )
     messagebox.showinfo("Resumo da Análise", summary_message)
 
-    divisionbar = "-" * 70
-    dateversion = (f"\nCurrent timestamp: {timestamp}\n\n")
-    videolog = open('video_lenght_analizer_LOG.txt', 'a')
+
     videolog.writelines(divisionbar)
-    videolog.writelines(dateversion)
     videolog.writelines(summary_message)
     videolog.close()
 
