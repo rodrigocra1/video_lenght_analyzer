@@ -3,6 +3,7 @@ import os
 from moviepy.editor import VideoFileClip
 import tkinter as tk
 from tkinter import filedialog, messagebox
+from datetime import datetime
 
 
 def format_duration(seconds):
@@ -23,6 +24,9 @@ def analyze_videos_in_directory(directory):
     Analisa um diretório e seus subdiretórios em busca de arquivos de vídeo,
     imprime suas durações e resume os resultados.
     """
+    current_datetime = datetime.now()
+    timestamp = current_datetime.strftime("%Y-%m-%d %H:%M:%S")
+
     # Lista de extensões de arquivo de vídeo comuns
     video_extensions = ('.mp4', '.mkv', '.avi', '.mov', '.wmv', '.flv', '.webm', '.mpeg', '.mpg')
 
@@ -76,9 +80,17 @@ def analyze_videos_in_directory(directory):
         f"Análise Concluída!\n\n"
         f"Total de arquivos de vídeo encontrados: {total_files_found}\n"
         f"Arquivos com mais de 1m30s: {longer_than_90s}\n"
-        f"Arquivos com 1m30s ou menos: {shorter_or_equal_to_90s}"
+        f"Arquivos com 1m30s ou menos: {shorter_or_equal_to_90s}\n"
     )
     messagebox.showinfo("Resumo da Análise", summary_message)
+
+    divisionbar = "-" * 70
+    dateversion = (f"\nCurrent timestamp: {timestamp}\n\n")
+    videolog = open('video_lenght_analizer_LOG.txt', 'a')
+    videolog.writelines(divisionbar)
+    videolog.writelines(dateversion)
+    videolog.writelines(summary_message)
+    videolog.close()
 
 
 def select_directory_and_run():

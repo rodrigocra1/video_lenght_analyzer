@@ -1,0 +1,30 @@
+Current timestamp: 1752022637.666475
+
+Análise Concluída!
+
+Total de arquivos de vídeo encontrados: 15
+Arquivos com mais de 1m30s: 4
+Arquivos com 1m30s ou menos: 10
+Current timestamp: 2025-07-08 21:00:58
+
+Análise Concluída!
+
+Total de arquivos de vídeo encontrados: 15
+Arquivos com mais de 1m30s: 4
+Arquivos com 1m30s ou menos: 10
+
+Current timestamp: 2025-07-08 21:02:54
+
+Análise Concluída!
+
+Total de arquivos de vídeo encontrados: 15
+Arquivos com mais de 1m30s: 4
+Arquivos com 1m30s ou menos: 10
+----------------------------------------------------------------------
+Current timestamp: 2025-07-08 21:05:39
+
+Análise Concluída!
+
+Total de arquivos de vídeo encontrados: 15
+Arquivos com mais de 1m30s: 4
+Arquivos com 1m30s ou menos: 10
